@@ -2,11 +2,11 @@
   "isDnD": false,
   "isCompatibility": false,
   "parent": {
-    "name": "Bindings",
-    "path": "folders/Scripts/Input/Bindings.yy",
+    "name": "SnowState",
+    "path": "folders/Scripts/SnowState.yy",
   },
   "resourceVersion": "1.0",
-  "name": "input_binding_get",
+  "name": "__snowstate_config",
   "tags": [],
   "resourceType": "GMScript",
 }
