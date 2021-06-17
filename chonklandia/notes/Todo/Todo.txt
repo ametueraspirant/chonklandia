@@ -1,0 +1,1 @@
+create inputs in o_input_manager.Step and import it into the workspace.
