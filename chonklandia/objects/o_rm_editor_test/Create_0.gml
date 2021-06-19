@@ -10,4 +10,4 @@ grid = {
 };
 
 grid.data = ds_grid_create(grid.cells.w, grid.cells.h);
-ds_grid_set_region(grid.data, 0, 0, grid.cells.w, grid.cells.h, irandom_range(0, 2));
+ds_grid_set_region(grid.data, 0, 0, grid.cells.w, grid.cells.h, 1);
