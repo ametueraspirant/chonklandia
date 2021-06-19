@@ -26,6 +26,7 @@
     {"id":{"name":"__input_config","path":"scripts/__input_config/__input_config.yy",},"order":12,},
     {"id":{"name":"input_default_key","path":"scripts/input_default_key/input_default_key.yy",},"order":3,},
     {"id":{"name":"input_verb_set","path":"scripts/input_verb_set/input_verb_set.yy",},"order":5,},
+    {"id":{"name":"s_cursor_test","path":"sprites/s_cursor_test/s_cursor_test.yy",},"order":1,},
     {"id":{"name":"__input_exception_handler","path":"scripts/__input_exception_handler/__input_exception_handler.yy",},"order":9,},
     {"id":{"name":"input_binding_set_safe","path":"scripts/input_binding_set_safe/input_binding_set_safe.yy",},"order":6,},
     {"id":{"name":"o_input_manager","path":"objects/o_input_manager/o_input_manager.yy",},"order":0,},
