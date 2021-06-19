@@ -10,3 +10,4 @@ if(input_check_pressed(Verb.rclick)) {
 	else new_index_test = 0;
 }
 
+if(input_check_pressed(Verb.f3))debug = !debug;

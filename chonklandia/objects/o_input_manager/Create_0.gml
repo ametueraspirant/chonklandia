@@ -4,7 +4,8 @@ enum Verb {
 	down,
 	right,
 	lclick,
-	rclick
+	rclick,
+	f3
 }
 
 input_default_key(vk_left, Verb.left);
@@ -13,5 +14,6 @@ input_default_key(vk_down, Verb.down);
 input_default_key(vk_right, Verb.right);
 input_default_mouse_button(mb_left, Verb.lclick);
 input_default_mouse_button(mb_right, Verb.rclick);
+input_default_key(vk_f3, Verb.f3);
 
 input_player_source_set(INPUT_SOURCE.KEYBOARD_AND_MOUSE);
