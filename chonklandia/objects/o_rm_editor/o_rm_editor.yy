@@ -26,11 +26,11 @@
   "properties": [],
   "overriddenProperties": [],
   "parent": {
-    "name": "test",
-    "path": "folders/Objects/test.yy",
+    "name": "System",
+    "path": "folders/Objects/System.yy",
   },
   "resourceVersion": "1.0",
-  "name": "o_rm_editor_test",
+  "name": "o_rm_editor",
   "tags": [],
   "resourceType": "GMObject",
 }

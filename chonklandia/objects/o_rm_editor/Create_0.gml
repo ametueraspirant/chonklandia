@@ -1,6 +1,4 @@
 // set up grid
-#macro _grid_size 16
-
 grid = {
 	cells: {
 		w: 10,
