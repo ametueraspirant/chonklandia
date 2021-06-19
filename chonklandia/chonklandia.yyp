@@ -94,6 +94,7 @@
     {"id":{"name":"__input_key_is_ignored","path":"scripts/__input_key_is_ignored/__input_key_is_ignored.yy",},"order":16,},
     {"id":{"name":"input_ignore_key_remove","path":"scripts/input_ignore_key_remove/input_ignore_key_remove.yy",},"order":4,},
     {"id":{"name":"input_cursor_x","path":"scripts/input_cursor_x/input_cursor_x.yy",},"order":8,},
+    {"id":{"name":"o_game_controller","path":"objects/o_game_controller/o_game_controller.yy",},"order":1,},
     {"id":{"name":"__input_class_gamepad","path":"scripts/__input_class_gamepad/__input_class_gamepad.yy",},"order":5,},
     {"id":{"name":"input_value_is_binding","path":"scripts/input_value_is_binding/input_value_is_binding.yy",},"order":8,},
     {"id":{"name":"input_cursor_limit_circle","path":"scripts/input_cursor_limit_circle/input_cursor_limit_circle.yy",},"order":2,},
