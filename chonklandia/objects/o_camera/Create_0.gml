@@ -1,17 +1,16 @@
 #macro _main_camera view_camera[0]
 
 cam = {
-	width: 40*_grid_size,
-	height: 40*_grid_size,
+	w: 1920/6,
+	h: 1080/6,
+	scale: 3,
 	_x: 0,
 	_y: 0
 }
 
-cam._x = (o_rm_editor.grid.spr.w / 2) - (cam.width / 2);
-cam._y = -(cam.height / 4);
+window_set_size(cam.w * cam.scale, cam.h * cam.scale);
+alarm[0] = 1;
+surface_resize(application_surface, cam.w * cam.scale, cam.h * cam.scale);
 
-main_camera = camera_create_view(cam._x, cam._y, cam.width/2, cam.height/2, 0, self, -1, -1, cam.width*0.5, cam.height*0.5);
-_main_camera = main_camera;
-window_set_size(cam.width, cam.height);
-
-camera_set_view_pos(_main_camera, cam._x, cam._y); 
+cam._x = (o_rm_editor.grid.spr.w / 2) - (cam.w / 2);
+cam._y = -(cam.h / 4);
