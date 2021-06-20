@@ -1,4 +1,3 @@
-#macro _grid_size 16
 #macro _instance_layer "Instances"
 #macro _terrain_layer "Terrain"
 
