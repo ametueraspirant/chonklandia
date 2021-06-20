@@ -11,7 +11,7 @@ cam = {
 window_set_size(cam.w * cam.scale, cam.h * cam.scale);
 alarm[0] = 1;
 surface_resize(application_surface, cam.w * cam.scale, cam.h * cam.scale);
-camera_set_view_size(_main_camera, cam.w, cam.h)
+camera_set_view_size(_main_camera, cam.w, cam.h);
 
 cam._x = (o_rm_editor.grid.spr.w / 2) - (cam.w / 2);
 cam._y = -(cam.h / 4);
