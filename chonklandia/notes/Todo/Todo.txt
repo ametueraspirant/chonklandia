@@ -1,3 +1,1 @@
-fix cursor bias to be more accurate.
-
 fix grid draw to be more even.
