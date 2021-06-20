@@ -1,10 +1,10 @@
 // set up temp mx my
-var mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
-var my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
+var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
+var _my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
 
 // clamp and write to memory
-grid.mx = clamp(mx, 0, grid.cells.w - 1);
-grid.my = clamp(my, 0, grid.cells.h - 1);
+grid.mx = clamp(_mx, 0, grid.cells.w - 1);
+grid.my = clamp(_my, 0, grid.cells.h - 1);
 
 if(input_check(Verb.lclick)) {
 	grid.data[# grid.mx, grid.my] = new_index;

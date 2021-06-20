@@ -19,6 +19,3 @@ ds_grid_set_region(grid.data, 0, 0, grid.cells.w, grid.cells.h, 1);
 //misc
 new_index = 0;
 debug = false;
-
-mx_save = 0;
-my_save = 0;
