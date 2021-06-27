@@ -7,7 +7,7 @@ grid.mx = clamp(_mx, 0, grid.cells.w - 1);
 grid.my = clamp(_my, 0, grid.cells.h - 1);
 
 if(input_check(Verb.lclick)) {
-	grid.data[# grid.mx, grid.my] = new_index;
+	grid.data[# grid.mx, grid.my].flo_i = new_index;
 }
 
 if(input_check_pressed(Verb.rclick)) {
