@@ -4,10 +4,6 @@ grid = {
 		w: 10,
 		h: 10
 	},
-	index: {
-		flo: 0,
-		dec: 0
-	},
 	spr: {
 		w: sprite_get_width(s_width_height_test),
 		h: sprite_get_height(s_width_height_test)
