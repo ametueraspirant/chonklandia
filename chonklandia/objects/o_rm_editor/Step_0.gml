@@ -6,13 +6,24 @@ var _my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
 grid.mx = clamp(_mx, 0, grid.cells.w - 1);
 grid.my = clamp(_my, 0, grid.cells.h - 1);
 
-if(input_check(Verb.lclick)) {
-	grid.data[# grid.mx, grid.my].flo_i = new_index;
+if(input_check_pressed(Verb.rclick)) {
+	if((editor.new_i + 1) < sprite_get_number(s_floor_test))editor.new_i++;
+	else editor.new_i = 0;
 }
 
-if(input_check_pressed(Verb.rclick)) {
-	if(new_index + 1 < sprite_get_number(s_floor_test))new_index++;
-	else new_index = 0;
+if(input_check_pressed(Verb.uscroll)) {
+	if((editor.h.cur + 1) < editor.h.maxi)editor.h.cur++;
+	else editor.h.cur = 0;
+}
+
+if(input_check_pressed(Verb.dscroll)) {
+	if(editor.h.cur > 0)editor.h.cur--;
+	else editor.h.cur = (editor.h.maxi - 1);
+}
+
+if(input_check(Verb.lclick)) {
+	grid.data[# grid.mx, grid.my].flo_i = editor.new_i;
+	grid.data[# grid.mx, grid.my].tile_h = editor.h.cur;
 }
 
 if(input_check_pressed(Verb.f3))debug = !debug;
