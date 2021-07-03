@@ -1,0 +1,60 @@
+{ "columns":4,
+ "image":"tileset temperate wip.png",
+ "imageheight":256,
+ "imagewidth":128,
+ "margin":0,
+ "name":"tileset temperate wip",
+ "spacing":0,
+ "tilecount":32,
+ "tiledversion":"1.7.0",
+ "tileheight":32,
+ "tilewidth":32,
+ "type":"tileset",
+ "version":"1.6",
+ "wangsets":[
+        {
+         "colors":[
+                {
+                 "color":"#ff0000",
+                 "name":"",
+                 "probability":1,
+                 "tile":-1
+                }],
+         "name":"Unnamed Set",
+         "tile":-1,
+         "type":"mixed",
+         "wangtiles":[
+                {
+                 "tileid":0,
+                 "wangid":[0, 0, 1, 0, 0, 0, 0, 0]
+                }, 
+                {
+                 "tileid":1,
+                 "wangid":[0, 0, 0, 1, 1, 1, 0, 0]
+                }, 
+                {
+                 "tileid":5,
+                 "wangid":[0, 1, 0, 0, 0, 0, 0, 0]
+                }, 
+                {
+                 "tileid":6,
+                 "wangid":[0, 0, 1, 0, 0, 0, 0, 1]
+                }, 
+                {
+                 "tileid":7,
+                 "wangid":[0, 0, 0, 0, 0, 1, 0, 0]
+                }, 
+                {
+                 "tileid":10,
+                 "wangid":[1, 1, 1, 1, 1, 1, 1, 1]
+                }, 
+                {
+                 "tileid":11,
+                 "wangid":[1, 0, 1, 1, 0, 1, 0, 0]
+                }, 
+                {
+                 "tileid":15,
+                 "wangid":[0, 0, 0, 1, 1, 0, 1, 1]
+                }]
+        }]
+}
