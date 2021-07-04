@@ -1,3 +1,4 @@
+// #TEST
 if(input_check_pressed(Verb.f3)) {
 	if(debug = false) {
 	debug = true;
@@ -6,6 +7,8 @@ if(input_check_pressed(Verb.f3)) {
 		debug = false;
 	}
 }
+
+// #TEST
 if(input_check_pressed(Verb.f2)) {
 	if(inputs = false) {
 		inputs = true;

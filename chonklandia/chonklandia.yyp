@@ -106,6 +106,7 @@
     {"id":{"name":"input_default_gamepad_button","path":"scripts/input_default_gamepad_button/input_default_gamepad_button.yy",},"order":1,},
     {"id":{"name":"input_player_gamepad_get","path":"scripts/input_player_gamepad_get/input_player_gamepad_get.yy",},"order":1,},
     {"id":{"name":"input_gamepad_get_description","path":"scripts/input_gamepad_get_description/input_gamepad_get_description.yy",},"order":3,},
+    {"id":{"name":"Save Code Snippets","path":"notes/Save Code Snippets/Save Code Snippets.yy",},"order":3,},
     {"id":{"name":"input_players_connected","path":"scripts/input_players_connected/input_players_connected.yy",},"order":5,},
     {"id":{"name":"input_player_source_set","path":"scripts/input_player_source_set/input_player_source_set.yy",},"order":4,},
     {"id":{"name":"__input_class_binding","path":"scripts/__input_class_binding/__input_class_binding.yy",},"order":3,},

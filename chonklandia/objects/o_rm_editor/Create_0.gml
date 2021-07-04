@@ -35,12 +35,3 @@ for(var xx = 0; xx < ds_grid_width(grid.data); xx++) {
 		ds_grid_set(grid.data, xx, yy, list);
 	}
 }
-
-/*var buffer = buffer_load("isometric_csv_b.json");
-var json = buffer_read(buffer, buffer_text);
-buffer_delete(buffer);
-testgrid = json_parse(json);
-show_debug_message(testgrid.layers[0]);*/
-
-//misc
-debug = false;

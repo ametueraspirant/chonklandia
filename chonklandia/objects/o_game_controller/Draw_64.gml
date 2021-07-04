@@ -1,3 +1,4 @@
+// #TEST
 if(debug) {
 	draw_set_halign(fa_left);
 	with(o_rm_editor) {
@@ -13,6 +14,7 @@ if(debug) {
 	draw_text(5, 5, "Press F3 to open the debug menu");
 }
 
+// #TEST
 if(inputs) {
 	draw_set_halign(fa_right);
 	draw_text(right_offset, 5, "scroll up - increase height");
