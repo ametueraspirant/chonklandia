@@ -4,3 +4,9 @@ var json = buffer_read(buffer, buffer_text);
 buffer_delete(buffer);
 testgrid = json_parse(json);
 show_debug_message(testgrid.layers[0]);
+
+// check if the sprite is in the camera
+if(x_sq > global.cam._x - grid.spr.w
+&& x_sq < global.cam._x + global.cam.w + grid.spr.w
+&& y_sq > global.cam._y - grid.spr.h
+&& y_sq < global.cam._y + global.cam.h + grid.spr.h) {

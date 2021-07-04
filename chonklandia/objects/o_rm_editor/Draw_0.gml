@@ -18,31 +18,25 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		var x_sq = (_xx - _yy) * (grid.spr.w / 2);
 		var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (_height * (grid.spr.h / 2));
 		
-		// check if the sprite is in the camera
-		if(x_sq > global.cam._x - grid.spr.w
-		&& x_sq < global.cam._x + global.cam.w + grid.spr.w
-		&& y_sq > global.cam._y - grid.spr.h
-		&& y_sq < global.cam._y + global.cam.h + grid.spr.h) {
-			// check the difference between tile down left/right tiles to change how to draw it
-			if(_height + 1 < dr_height && _height + 1 < dl_height) {
-				// do not draw
-				grid.data[# _xx, _yy].drawn = dt.hidden;
-			} else if(dr_height + 1 < _height || dl_height + 1 < _height) {
-				// draw a stack
-				var h_dif = _height - floor(_height);
-				var h_low = floor(min(dl_height, dr_height)) + h_dif;
-				for(var h = h_low; h <= _height; h++) {
-					var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (h * (grid.spr.h / 2));
-					draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
-				}
-				grid.data[# _xx, _yy].drawn = dt.stack;
-			} else {
-				// draw a single
+		// check the difference between tile down left/right tiles to change how to draw it
+		if(_height + 1 < dr_height && _height + 1 < dl_height) {
+			// do not draw
+			grid.data[# _xx, _yy].drawn = dt.hidden;
+		} else if(dr_height + 1 < _height || dl_height + 1 < _height) {
+			// draw a stack
+			var h_dif = _height - floor(_height);
+			var h_low = floor(min(dl_height, dr_height)) + h_dif;
+			for(var h = h_low; h <= _height; h++) {
+				var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (h * (grid.spr.h / 2));
 				draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
-				grid.data[# _xx, _yy].drawn = dt.single;
 			}
-			
-			if(_xx == grid.mx && _yy == grid.my)draw_sprite(s_cursor_test, 0, x_sq, y_sq);
+			grid.data[# _xx, _yy].drawn = dt.stack;
+		} else {
+			// draw a single
+			draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
+			grid.data[# _xx, _yy].drawn = dt.single;
 		}
+			
+		if(_xx == grid.mx && _yy == grid.my)draw_sprite(s_cursor_test, 0, x_sq, y_sq);
 	}
 }
