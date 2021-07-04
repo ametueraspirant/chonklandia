@@ -10,7 +10,6 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (_height * (grid.spr.h / 2));
 		
 		draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
-		draw_text(x_sq, y_sq, string(_data));
 		
 		/*for(var tile_y = 0; tile_y <= _height; tile_y++) {
 			var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (tile_y * (grid.spr.h / 2));
