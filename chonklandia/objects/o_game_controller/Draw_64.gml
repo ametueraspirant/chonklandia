@@ -41,3 +41,7 @@ with(o_rm_editor) {
 		case 3: draw_text(global.right_offset, global.bottom_offset, "current tile selection: water"); break;
 	}
 }
+
+draw_set_halign(fa_left);
+draw_set_valign(fa_bottom);
+draw_text(5, global.bottom_offset, "FPS: " + string(fps_real) + " " + string(fps));
