@@ -44,4 +44,4 @@ with(o_rm_editor) {
 
 draw_set_halign(fa_left);
 draw_set_valign(fa_bottom);
-draw_text(5, global.bottom_offset, "FPS: " + string(fps_real) + " " + string(fps));
+draw_text(5, global.bottom_offset, "FPS: " + string(fps));

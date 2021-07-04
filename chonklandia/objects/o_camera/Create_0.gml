@@ -1,6 +1,6 @@
 #macro _main_camera view_camera[0]
 
-cam = {
+global.cam = {
 	w: 1920/6,
 	h: 1080/6,
 	scale: 3,
@@ -8,10 +8,10 @@ cam = {
 	_y: 0
 }
 
-window_set_size(cam.w * cam.scale, cam.h * cam.scale);
+window_set_size(global.cam.w * global.cam.scale, global.cam.h * global.cam.scale);
 alarm[0] = 1;
-surface_resize(application_surface, cam.w * cam.scale, cam.h * cam.scale);
-camera_set_view_size(_main_camera, cam.w, cam.h);
+surface_resize(application_surface, global.cam.w * global.cam.scale, global.cam.h * global.cam.scale);
+camera_set_view_size(_main_camera, global.cam.w, global.cam.h);
 
-cam._x = (o_rm_editor.grid.spr.w / 2) - (cam.w / 2);
-cam._y = -(cam.h / 4);
+global.cam._x = (o_rm_editor.grid.spr.w / 2) - (global.cam.w / 2);
+global.cam._y = -(global.cam.h / 4);
