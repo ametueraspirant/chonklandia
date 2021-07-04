@@ -25,7 +25,7 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		} else if(dr_height + 1 < _height || dl_height + 1 < _height) {
 			// draw a stack
 			var h_dif = _height - floor(_height);
-			var h_low = min(dl_height, dr_height) + h_dif;
+			var h_low = floor(min(dl_height, dr_height)) + h_dif;
 			for(var h = h_low; h <= _height; h++) {
 				var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (h * (grid.spr.h / 2));
 				draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
