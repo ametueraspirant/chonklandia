@@ -10,9 +10,9 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		// set up height variables
 		var _height = _data.tile_h;
 		if(_yy + 1 < grid.cells.h)var dl_height = grid.data[# _xx, _yy + 1].tile_h;
-		else var dl_height = _height;
+		else var dl_height = 0;
 		if(_xx + 1 < grid.cells.w)var dr_height = grid.data[# _xx + 1, _yy].tile_h;
-		else var dr_height = _height;
+		else var dr_height = 0;
 		
 		// combine those into current drawn coordinates for the tile
 		var x_sq = (_xx - _yy) * (grid.spr.w / 2);

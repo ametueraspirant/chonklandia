@@ -15,7 +15,7 @@ if(input_check_pressed(Verb.rclick)) {
 
 if(input_check_pressed(Verb.uscroll)) {
 	if(input_check(Verb.ctrl)) {
-		if(ceil((editor.h.cur + 0.1)) < editor.h.maxi)editor.h.cur += 0.1;
+		if(ceil((editor.h.cur + 0.2)) < editor.h.maxi)editor.h.cur += 0.2;
 		else editor.h.cur = 0;
 	} else {
 		if(floor((editor.h.cur + 1)) < editor.h.maxi)editor.h.cur = floor(editor.h.cur + 1);
@@ -25,7 +25,7 @@ if(input_check_pressed(Verb.uscroll)) {
 
 if(input_check_pressed(Verb.dscroll)) {
 	if(input_check(Verb.ctrl)) {
-		if(editor.h.cur > 0)editor.h.cur -= 0.1;
+		if(editor.h.cur > 0)editor.h.cur -= 0.2;
 		else editor.h.cur = (editor.h.maxi - 1);
 	} else {
 		if(ceil(editor.h.cur > 0))editor.h.cur = ceil(editor.h.cur - 1);
