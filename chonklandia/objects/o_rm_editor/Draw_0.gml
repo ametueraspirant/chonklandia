@@ -1,3 +1,5 @@
+/// @description draw map grid
+
 for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 	for(var _yy = 0; _yy < grid.cells.h; _yy++) {
 		var _data = grid.data[# _xx, _yy];

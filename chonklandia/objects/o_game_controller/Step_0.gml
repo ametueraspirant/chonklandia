@@ -1,0 +1,1 @@
+if(input_check_pressed(Verb.f3))debug = !debug;

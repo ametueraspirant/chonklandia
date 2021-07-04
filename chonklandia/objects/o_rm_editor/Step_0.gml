@@ -1,3 +1,5 @@
+/// @description handle menu inputs
+
 // set up temp mx my
 var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
 var _my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
@@ -25,5 +27,3 @@ if(input_check(Verb.lclick)) {
 	grid.data[# grid.mx, grid.my].flo_i = editor.new_i;
 	grid.data[# grid.mx, grid.my].tile_h = editor.h.cur;
 }
-
-if(input_check_pressed(Verb.f3))debug = !debug;
