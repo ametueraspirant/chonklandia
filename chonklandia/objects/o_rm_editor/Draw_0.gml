@@ -1,5 +1,9 @@
 /// @description draw map grid
 
+// establish cam to grid variables
+var cam_x = (global.cam._x + global.cam._y) / (grid.spr.w/2);
+var cam_y = (global.cam._y - global.cam._x) / (grid.spr.h/2);
+
 // draw map
 for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 	for(var _yy = 0; _yy < grid.cells.h; _yy++) {
