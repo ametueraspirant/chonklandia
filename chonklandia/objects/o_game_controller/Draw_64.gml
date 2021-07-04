@@ -6,8 +6,8 @@ if(debug) {
 		draw_text(10, 5, "mouse x: " + string(grid.mx));
 		draw_text(10, 25, "mouse y: " + string(grid.my));
 		draw_text(10, 45, "new index: " + string(editor.new_i));
-		draw_text(10, 65, "cam x: " + string(o_camera.cam._x));
-		draw_text(10, 85, "cam y: " + string(o_camera.cam._y));
+		draw_text(10, 65, "cam x: " + string(global.cam._x));
+		draw_text(10, 85, "cam y: " + string(global.cam._y));
 		draw_text(10, 105, "grid height: " + string(editor.h.cur));
 	}
 } else {
