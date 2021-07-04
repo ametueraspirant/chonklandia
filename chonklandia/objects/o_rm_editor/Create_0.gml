@@ -14,7 +14,7 @@ grid = {
 }
 
 editor = {
-	new_i: 0,
+	new_i: 1,
 	h: {
 		cur: 0,
 		maxi: 12
