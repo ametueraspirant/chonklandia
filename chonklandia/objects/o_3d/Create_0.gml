@@ -34,10 +34,10 @@ vertex_create_face(vbuff_sides,
 	
 // right face
 vertex_create_face(vbuff_sides,
-	new Vector3(x + sprite_height, y, z + ground_depth),
-	new Vector3(x + sprite_height, y, z),
-	new Vector3(x + sprite_height, y + sprite_height, z),
-	new Vector3(x + sprite_height, y + sprite_height, z + ground_depth),
+	new Vector3(x + sprite_width, y, z + ground_depth),
+	new Vector3(x + sprite_width, y, z),
+	new Vector3(x + sprite_width, y + sprite_height, z),
+	new Vector3(x + sprite_width, y + sprite_height, z + ground_depth),
 	c_gray, 1, ground_depth, sprite_height);
 
 vertex_end(vbuff_sides);
