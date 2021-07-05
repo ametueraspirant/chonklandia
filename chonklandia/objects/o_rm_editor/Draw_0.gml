@@ -3,7 +3,7 @@
 // establish cam to grid variables
 //var cam_x = (global.cam._x + global.cam._y) / (grid.spr.w/2);
 //var cam_y = (global.cam._y - global.cam._x) / (grid.spr.h/2);
-
+/*
 // draw map
 for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 	for(var _yy = 0; _yy < grid.cells.h; _yy++) {
@@ -19,8 +19,8 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		else var dr_height = 0;
 		
 		// combine those into current drawn coordinates for the tile
-		var x_sq = (_xx - _yy) * (grid.spr.w / 2);
-		var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (_height * (grid.spr.h / 2));
+		var x_sq = (_xx - _yy) * (grid.spr.w * .5);
+		var y_sq = ((_yy + _xx) * (grid.spr.h  * .5)) - (_height * (grid.spr.h * .5));
 		
 		// check the difference between tile down left/right tiles to change how to draw it
 		if(_height + 1 < dr_height && _height + 1 < dl_height) {
@@ -31,7 +31,7 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 			var h_dif = _height - floor(_height);
 			var h_low = floor(min(dl_height, dr_height)) + h_dif;
 			for(var h = h_low; h <= _height; h++) {
-				var y_sq = ((_yy + _xx) * (grid.spr.h / 2)) - (h * (grid.spr.h / 2));
+				var y_sq = ((_yy + _xx) * (grid.spr.h * .5)) - (h * (grid.spr.h * .5));
 				draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
 			}
 			grid.data[# _xx, _yy].drawn = dt.stack;

@@ -33,6 +33,4 @@ function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width,
 	vertex_position_3d(_v_buf, _p4.x, _p4.y, _p4.z);
 	vertex_texcoord(_v_buf, 0, tex_h);
 	vertex_color(_v_buf, _colour, _alpha);
-	
-	
 }
