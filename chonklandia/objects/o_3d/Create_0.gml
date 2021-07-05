@@ -13,7 +13,7 @@ vertex_create_face(vbuff_top,
 	new Vector3(x + sprite_width, y, z + ground_depth),
 	new Vector3(x + sprite_width, y, z),
 	new Vector3(x, y, z),
-	c_gray, 1, sprite_width, ground_depth);
+	-1, 1, sprite_width, ground_depth);
 
 vertex_end(vbuff_top);
 vertex_freeze(vbuff_top);

@@ -6,8 +6,8 @@ function Vector3(_x, _y, _z) constructor {
 
 function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width, _height) {
 	static tex_s = 32;
-	var tex_w = _height
-	var tex_h = _width
+	var tex_w = _height / tex_s;
+	var tex_h = _width / tex_s;
 	
 	// first triangle
 	vertex_position_3d(_v_buf, _p1.x, _p1.y, _p1.z);
