@@ -34,3 +34,7 @@ function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width,
 	vertex_texcoord(_v_buf, 0, tex_h);
 	vertex_color(_v_buf, _colour, _alpha);
 }
+
+function convert_grid_to_vertex() {
+	
+}
