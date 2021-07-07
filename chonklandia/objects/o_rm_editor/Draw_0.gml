@@ -3,7 +3,7 @@
 // establish cam to grid variables
 //var cam_x = (global.cam._x + global.cam._y) / (grid.spr.w/2);
 //var cam_y = (global.cam._y - global.cam._x) / (grid.spr.h/2);
-
+/*
 // draw map
 for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 	for(var _yy = 0; _yy < grid.cells.h; _yy++) {
@@ -25,7 +25,6 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 		// check the difference between tile down left/right tiles to change how to draw it
 		if(_height + 1 < dr_height && _height + 1 < dl_height) {
 			// do not draw
-			grid.data[# _xx, _yy].drawn = dt.hidden;
 		} else if(dr_height + 1 < _height || dl_height + 1 < _height) {
 			// draw a stack
 			var h_dif = _height - floor(_height);
@@ -34,11 +33,9 @@ for(var _xx = 0; _xx < grid.cells.w; _xx++) {
 				var y_sq = ((_yy + _xx) * (grid.spr.h * .5)) - (h * (grid.spr.h * .5));
 				draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
 			}
-			grid.data[# _xx, _yy].drawn = dt.stack;
 		} else {
 			// draw a single
 			draw_sprite(s_floor_test, _flo_i, x_sq, y_sq);
-			grid.data[# _xx, _yy].drawn = dt.single;
 		}
 			
 		if(_xx == grid.mx && _yy == grid.my)draw_sprite(s_cursor_test, 0, x_sq, y_sq);
