@@ -1,4 +1,6 @@
 /// @description draw map grid
+vertex_submit(new_map[# 0, 0], pr_trianglelist, grid.spr.grass);
+
 
 // establish cam to grid variables
 //var cam_x = (global.cam._x + global.cam._y) / (grid.spr.w/2);

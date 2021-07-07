@@ -1,4 +1,4 @@
-// define variables
+/*// define variables
 ground_depth = 80;
 ground_offset = 0;
 z = depth + ground_offset;

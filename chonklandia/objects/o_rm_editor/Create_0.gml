@@ -5,10 +5,8 @@ grid = { // #TEST
 		h: global.ygrid
 	},
 	spr: {
-		w: sprite_get_width(s_width_height_test),
-		h: sprite_get_height(s_width_height_test)
+		grass: sprite_get_texture(s_grass_top_test, 0)
 	},
-	data: [],
 	mx: 0,
 	my: 0
 }
@@ -23,3 +21,4 @@ editor = {
 
 grid.data = init_new_map_grid(grid.cells.w, grid.cells.h, function() constructor {flo_i = 1; dec_i = 0; tile_h = 0;}); //# TEST
 
+new_map = render_map_to_buffer(grid.data, false);

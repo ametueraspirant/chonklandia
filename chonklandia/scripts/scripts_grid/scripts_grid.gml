@@ -4,6 +4,7 @@ function init_new_map_grid(_w, _h, _data) {
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
+			_grid[# xx, yy].tile_h = random_range(0, 10);
 		}
 	}
 	
@@ -13,16 +14,21 @@ function init_new_map_grid(_w, _h, _data) {
 function render_map_to_buffer(_in_grid, _is_for_editing) {
 	static _grid_size = 16;
 	static _tex_size = 32; // #TEST
+	static _origin = new Vector3(0, 0, 0); // #TEST
 	
 	if(ds_grid_width(_in_grid) <= _grid_size && ds_grid_height(_in_grid) <= _grid_size) {
 		var _new_grid = ds_grid_create(1, 1);
 		var _buffer = vertex_create_buffer();
-		var _grass_tex = sprite_get_texture(s_grass_top_test, 0);
 		vertex_begin(_buffer, global.v_format);
 		
 		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
 			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
-				vertex_create_face(_buffer, 
+				vertex_create_face(_buffer,
+					new Vector3(_origin.x + (_tex_size * xx), _origin.y + (_tex_size * yy), _origin.z + _in_grid[# xx, yy].tile_h),
+					new Vector3(_origin.x + (_tex_size * xx) + _tex_size, _origin.y + (_tex_size * yy), _origin.z + _in_grid[# xx, yy].tile_h),
+					new Vector3(_origin.x + (_tex_size * xx) + _tex_size, _origin.y + (_tex_size * yy) + _tex_size, _origin.z + _in_grid[# xx, yy].tile_h),
+					new Vector3(_origin.x + (_tex_size * xx), _origin.y + (_tex_size * yy) + _tex_size, _origin.z + _in_grid[# xx, yy].tile_h),
+					-1, 1, _tex_size, _tex_size);
 			}
 		}
 		

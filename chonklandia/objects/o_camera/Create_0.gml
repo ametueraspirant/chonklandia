@@ -18,8 +18,8 @@ surface_resize(application_surface, global.cam.w * global.cam.scale, global.cam.
 camera_set_view_size(_main_camera, global.cam.w, global.cam.h);
 
 // set camx and y to some variables i dunno
-global.cam.xx = (o_rm_editor.grid.spr.w / 2) - (global.cam.w / 2);
-global.cam.yy = -(global.cam.h / 4);
+global.cam.xx = (global.cam.w / 2);
+global.cam.yy = (global.cam.h / 2);
 
 // set up vertex format and 3d settings
 gpu_set_ztestenable(true);
