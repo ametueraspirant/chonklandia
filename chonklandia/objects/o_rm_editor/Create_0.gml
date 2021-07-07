@@ -1,5 +1,5 @@
 /// @description set up grid
-grid = {
+grid = { // #TEST
 	cells: {
 		w: global.xgrid,
 		h: global.ygrid
