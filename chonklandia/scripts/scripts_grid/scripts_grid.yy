@@ -6,7 +6,7 @@
     "path": "folders/Scripts.yy",
   },
   "resourceVersion": "1.0",
-  "name": "scripts_3d",
+  "name": "scripts_grid",
   "tags": [],
   "resourceType": "GMScript",
 }

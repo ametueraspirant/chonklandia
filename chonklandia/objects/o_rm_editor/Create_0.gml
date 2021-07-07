@@ -21,17 +21,4 @@ editor = {
 	}
 }
 
-enum dt {
-	hidden,
-	single,
-	stack
-}
-
-grid.data = ds_grid_create(grid.cells.w, grid.cells.h);
-
-for(var xx = 0; xx < ds_grid_width(grid.data); xx++) {
-	for(var yy = 0; yy < ds_grid_height(grid.data); yy++) {
-		var list = {flo_i: 1, dec_i: 0, tile_h: 0, drawn: dt.single};
-		ds_grid_set(grid.data, xx, yy, list);
-	}
-}
+init_new_map_grid(grid.data, {flo_i: 1, dec_i: 0, tile_h: 0});
