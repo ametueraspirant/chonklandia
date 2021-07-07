@@ -21,5 +21,5 @@ editor = {
 	}
 }
 
-init_new_map_grid(grid.data, {flo_i: 1, dec_i: 0, tile_h: 0});
+init_new_map_grid(grid.data, grid.cells.w, grid.cells.h, {flo_i: 1, dec_i: 0, tile_h: 0});
 

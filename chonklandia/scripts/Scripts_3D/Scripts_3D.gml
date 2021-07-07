@@ -5,10 +5,10 @@ function Vector3(_x, _y, _z) constructor {
 }
 	
 function vertex_point(_buffer, _x, _y, _z, _u, _v, _col, _alpha) {
-    vertex_position_3d(_buffer, _x, _y, _z);
-    vertex_normal(_buffer, _x, _y, _z);
-    vertex_texcoord(_buffer, _u, _v);
-    vertex_color(_buffer, _col, _alpha);
+	vertex_position_3d(_buffer, _x, _y, _z);
+	vertex_texcoord(_buffer, _u, _v);
+	vertex_normal(_buffer, _x, _y, _z);
+	vertex_color(_buffer, _col, _alpha);
 }
 
 function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width, _height) {
