@@ -4,9 +4,9 @@ function Vector3(_x, _y, _z) constructor {
 	z = _z;
 }
 	
-function vertex_point(_buffer, _x, _y, _z, /*_nx, _ny, _nz,*/ _u, _v, _col, _alpha) {
+function vertex_point(_buffer, _x, _y, _z, _u, _v, _col, _alpha) {
     vertex_position_3d(_buffer, _x, _y, _z);
-    //vertex_normal(_buffer, _nx, _ny, _nz); // #TODO add normals once I fuckin figure out what those are
+    vertex_normal(_buffer, _x, _y, _z);
     vertex_texcoord(_buffer, _u, _v);
     vertex_color(_buffer, _col, _alpha);
 }
