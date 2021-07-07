@@ -10,6 +10,11 @@ function init_new_map_grid(_grid, _w, _h, _data) {
 	_grid = ds_grid_create(_w, _h);
 	
 	grid_set_func(_grid, function(_grid, _x, _y, _data){
-		_grid[# _x, _y] = _data;
+		var _list = _data;
+		_grid[# _x, _y] = _list;
 	});
+}
+
+function render_map_to_buffer(_grid, ) {
+	
 }

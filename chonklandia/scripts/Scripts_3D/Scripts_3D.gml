@@ -26,7 +26,3 @@ function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width,
 	vertex_point(_v_buf, _p3.x, _p3.y, _p3.z, tex_w, tex_h, _colour, _alpha); // point 3
 	vertex_point(_v_buf, _p4.x, _p4.y, _p4.z, 0, tex_h, _colour, _alpha); // point 4
 }
-
-function convert_grid_to_vertex() {
-	
-}
