@@ -21,4 +21,5 @@ editor = {
 	}
 }
 
-grid.data = init_new_map_grid(grid.cells.w, grid.cells.h, function() constructor {flo_i = 1; dec_i = 0; tile_h = 0;});
+grid.data = init_new_map_grid(grid.cells.w, grid.cells.h, function() constructor {flo_i = 1; dec_i = 0; tile_h = 0;}); //# TEST
+
