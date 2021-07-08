@@ -45,23 +45,30 @@ function render_map_to_buffer(_in_grid, _is_for_editing) {
 	
 	if(ds_grid_width(_in_grid) <= _grid_size && ds_grid_height(_in_grid) <= _grid_size) {
 		var _new_grid = ds_grid_create(1, 1);
-		var _buffer = vertex_create_buffer();
-		vertex_begin(_buffer, global.v_format);
-		
+		var _top_buffer = vertex_create_buffer();
+		vertex_begin(_top_buffer, global.v_format);
 		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
 			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
-				render_top_face(_buffer, _in_grid, xx, yy, _origin, _tex_size);
-				render_lr_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
-				render_lr_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
-				render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
-				render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
+				render_top_face(_top_buffer, _in_grid, xx, yy, _origin, _tex_size);
 			}
 		}
+		vertex_end(_top_buffer);
+		if(!_is_for_editing)vertex_freeze(_top_buffer);
 		
-		vertex_end(_buffer);
-		if(!_is_for_editing)vertex_freeze(_buffer);
+		var _sides_buffer = vertex_create_buffer();
+		vertex_begin(_sides_buffer, global.v_format);
+		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
+			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
+				render_lr_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
+				render_lr_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
+				render_fb_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
+				render_fb_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
+			}
+		}
+		vertex_end(_sides_buffer);
+		if(!_is_for_editing)vertex_freeze(_sides_buffer);
 		
-		_new_grid[# 0, 0] = _buffer;
+		_new_grid[# 0, 0] = [_top_buffer, _sides_buffer];
 		return _new_grid;
 	} else {
 		

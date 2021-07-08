@@ -5,7 +5,8 @@ grid = { // #TEST
 		h: global.ygrid
 	},
 	spr: {
-		grass: sprite_get_texture(s_grass_top_test, 0)
+		grass: sprite_get_texture(s_grass_top_test, 0),
+		ground: sprite_get_texture(s_ground_side_test, 0)
 	},
 	mx: 0,
 	my: 0

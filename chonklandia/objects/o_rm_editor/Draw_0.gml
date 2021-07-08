@@ -1,5 +1,6 @@
 /// @description draw map grid
-vertex_submit(new_map[# 0, 0], pr_trianglelist, grid.spr.grass);
+vertex_submit(new_map[# 0, 0][0], pr_trianglelist, grid.spr.grass);
+vertex_submit(new_map[# 0, 0][1], pr_trianglelist, grid.spr.ground);
 
 
 // establish cam to grid variables

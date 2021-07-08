@@ -20,17 +20,3 @@ camera_set_view_size(_main_camera, global.cam.w, global.cam.h);
 // set camx and y to some variables i dunno
 global.cam.xx = (global.cam.w / 2);
 global.cam.yy = (global.cam.h / 2);
-
-// set up vertex format and 3d settings
-gpu_set_ztestenable(true);
-gpu_set_alphatestenable(true);
-gpu_set_texrepeat(true);
-
-vertex_format_begin();
-	
-vertex_format_add_position_3d();
-vertex_format_add_texcoord();
-vertex_format_add_normal();
-vertex_format_add_color();
-
-global.v_format = vertex_format_end();
