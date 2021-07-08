@@ -6,7 +6,13 @@ global.cam = {
 	xx: 0,
 	yy: 0,
 	scale: 3,
-	dist: -300,
+	zoom: {
+		cur: 2,
+		min: 1,
+		max: 5
+	},
+	tilt: 135,
+	spd: 1,
 	fov: 90,
 	asp: camera_get_view_width(_main_camera) / camera_get_view_height(_main_camera)
 }

@@ -4,7 +4,7 @@ function init_new_map_grid(_w, _h, _data) {
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
-			_grid[# xx, yy].tile_h = random_range(0, 100);
+			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TODO make 5 the default step height
 		}
 	}
 	
