@@ -7,8 +7,8 @@ global.right_offset = room_width/2-10; // #TEST
 global.bottom_offset = room_height/2-10; // #TEST
 
 // #TEST set the grid size to a query to the user
-global.xgrid = get_integer("What do you want grid width to be? (top left to bottom right)", 10); // #TEST
-global.ygrid = get_integer("What do you want grid height to be? (top right to bottom left)", 10); // #TEST
+global.xgrid = get_integer("What do you want grid width to be? (top left to bottom right)", 16); // #TEST
+global.ygrid = get_integer("What do you want grid height to be? (top right to bottom left)", 16); // #TEST
 
 // set up vertex format and 3d settings
 gpu_set_ztestenable(true);

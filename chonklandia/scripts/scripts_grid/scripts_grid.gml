@@ -4,7 +4,7 @@ function init_new_map_grid(_w, _h, _data) {
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
-			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TODO make 5 the default step height
+			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TEST #TODO make 5 the default step height
 		}
 	}
 	
@@ -38,7 +38,7 @@ function render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, _is_fron
 		-1, 1, _tex_size, _tex_size);
 }
 
-function render_map_to_buffer(_in_grid, _is_for_editing) {
+function render_grid_to_buffer(_in_grid, _is_for_editing) {
 	static _grid_size = 16;
 	static _tex_size = 32; // #TEST
 	static _origin = new Vector3(0, 0, 0); // #TEST
