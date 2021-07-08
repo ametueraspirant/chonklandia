@@ -4,11 +4,38 @@ function init_new_map_grid(_w, _h, _data) {
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
-			_grid[# xx, yy].tile_h = random_range(0, 10);
+			_grid[# xx, yy].tile_h = random_range(0, 100);
 		}
 	}
 	
 	return _grid;
+}
+
+function render_top_face(_buffer, _in_grid, xx, yy, _origin, _tex_size) {
+	vertex_create_face(_buffer,
+		new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy),				_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy),				_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy) + _tex_size,	_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy) + _tex_size,	_origin.z + _in_grid[# xx, yy].tile_h),
+		-1, 1, _tex_size, _tex_size);
+}
+
+function render_lr_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, _is_right) { // #TODO add internal or exteranl loop to render sides farther down if height is greater than one tile upl
+	vertex_create_face(_buffer,
+		new Vector3(_origin.x + (_tex_size * xx) + (_is_right * _tex_size),		_origin.y + (_tex_size * yy),				_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + (_is_right * _tex_size),		_origin.y + (_tex_size * yy) + _tex_size,	_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + (_is_right * _tex_size),		_origin.y + (_tex_size * yy) + _tex_size,	_origin.z							 ),
+		new Vector3(_origin.x + (_tex_size * xx) + (_is_right * _tex_size),		_origin.y + (_tex_size * yy),				_origin.z							 ),
+		-1, 1, _tex_size, _tex_size);
+}
+
+function render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, _is_front) { // #TODO same as previous function
+	vertex_create_face(_buffer,
+		new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy) + (_is_front * _tex_size),		_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy) + (_is_front * _tex_size),		_origin.z + _in_grid[# xx, yy].tile_h),
+		new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy) + (_is_front * _tex_size),		_origin.z							 ),
+		new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy) + (_is_front * _tex_size),		_origin.z							 ),
+		-1, 1, _tex_size, _tex_size);
 }
 
 function render_map_to_buffer(_in_grid, _is_for_editing) {
@@ -23,12 +50,11 @@ function render_map_to_buffer(_in_grid, _is_for_editing) {
 		
 		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
 			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
-				vertex_create_face(_buffer,
-					new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy),				_origin.z + _in_grid[# xx, yy].tile_h),
-					new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy),				_origin.z + _in_grid[# xx, yy].tile_h),
-					new Vector3(_origin.x + (_tex_size * xx) + _tex_size,	_origin.y + (_tex_size * yy) + _tex_size,	_origin.z + _in_grid[# xx, yy].tile_h),
-					new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy) + _tex_size,	_origin.z + _in_grid[# xx, yy].tile_h),
-					-1, 1, _tex_size, _tex_size);
+				render_top_face(_buffer, _in_grid, xx, yy, _origin, _tex_size);
+				render_lr_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
+				render_lr_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
+				render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
+				render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
 			}
 		}
 		
