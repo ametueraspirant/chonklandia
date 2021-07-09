@@ -54,9 +54,9 @@ function render_buffer(_grid, _origin, _index) { // #IN PROGRESS
 				// define relative heights
 				var _cur_h = _grid[# xx, yy].tile_h;
 				var _left_h = _grid[# max(xx - 1, 0), yy].tile_h;
-				var _right_h = _grid[# min(xx + 1, ds_grid_width(_grid)), yy].tile_h;
+				var _right_h = _grid[# min(xx + 1, ds_grid_width(_grid) - 1), yy].tile_h;
 				var _up_h = _grid[# xx, max(yy - 1, 0)].tile_h;
-				var _down_h = _grid[# xx, min(yy + 1, ds_grid_height(_grid))].tile_h;
+				var _down_h = _grid[# xx, min(yy + 1, ds_grid_height(_grid) - 1)].tile_h;
 				
 				// apply draw to grid
 				if(_grid[# xx, yy].side_i == _index) {

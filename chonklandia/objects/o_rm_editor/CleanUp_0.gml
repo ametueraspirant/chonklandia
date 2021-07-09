@@ -1,2 +1,8 @@
-//vertex_delete_buffer(new_map[# 0, 0][0]);
-//vertex_delete_buffer(new_map[# 0, 0][1]);
+for(var xx = 0; xx < ds_grid_width(grid.map); xx++) {
+	for(var yy = 0; yy < ds_grid_height(grid.map); yy++) {
+		var _list = grid.map[# xx, yy];
+		for(var zz = 0; zz < ds_list_size(_list); zz++) {
+			vertex_delete_buffer(_list[| zz]);
+		}
+	}
+}
