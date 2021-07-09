@@ -82,7 +82,7 @@
     {"id":{"name":"s_grass_top_test","path":"sprites/s_grass_top_test/s_grass_top_test.yy",},"order":1,},
     {"id":{"name":"input_hotswap_tick","path":"scripts/input_hotswap_tick/input_hotswap_tick.yy",},"order":1,},
     {"id":{"name":"input_check_released","path":"scripts/input_check_released/input_check_released.yy",},"order":6,},
-    {"id":{"name":"Sprite9","path":"sprites/Sprite9/Sprite9.yy",},"order":4,},
+    {"id":{"name":"s_width_height_test","path":"sprites/s_width_height_test/s_width_height_test.yy",},"order":4,},
     {"id":{"name":"__input_key_get_name","path":"scripts/__input_key_get_name/__input_key_get_name.yy",},"order":15,},
     {"id":{"name":"input_xy","path":"scripts/input_xy/input_xy.yy",},"order":3,},
     {"id":{"name":"s_snow_top_test","path":"sprites/s_snow_top_test/s_snow_top_test.yy",},"order":2,},

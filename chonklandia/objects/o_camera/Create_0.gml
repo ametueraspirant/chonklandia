@@ -13,8 +13,6 @@ global.cam = {
 	},
 	tilt: 135,
 	spd: 1,
-	fov: 90,
-	asp: camera_get_view_width(_main_camera) / camera_get_view_height(_main_camera)
 }
 
 // set window and camera size to desired parameters
