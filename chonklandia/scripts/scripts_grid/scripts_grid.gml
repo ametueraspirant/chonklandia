@@ -76,34 +76,32 @@ function render_buffer(_grid, _origin, _index) { // #IN PROGRESS
 			}
 		}
 	}
-	return vertex_end(_buffer);
+	vertex_end(_buffer);
+	return _buffer;
 }
 	
-function render_chunk(_grid, _x, _y, _buffer) { // #IN PROGRESS
+function render_chunk(_grid, _x, _y) { // #IN PROGRESS
 	var _list = ds_list_create();
 	var _origin = new Vector3(_x * global.tex_size * global.chunk_size, _y * global.tex_size * global.chunk_size, 0);
 	
-	switch(_buffer) {
-		case Tiles.grass:
-			_list[| Tiles.grass] = render_buffer(_grid, _origin, Tiles.grass);
-			_list[| Tiles.ground] = render_buffer(_grid, _origin, Tiles.ground);
-		break;
-		
-		case Tiles.ground:
-			_list[| Tiles.ground] = render_buffer(_grid, _origin, Tiles.ground);
-		break;
-		
-		case Tiles.snow:
-			_list[| Tiles.snow] = render_buffer(_grid, _origin, Tiles.snow);
-			_list[| Tiles.ground] = render_buffer(_grid, _origin, Tiles.ground);
-		break;
-		
-		case Tiles.water:
-			render_buffer(_grid, _origin, Tiles.water);
-		break;
-	}
+	_list[| Tiles.grass] = render_buffer(_grid, _origin, Tiles.grass);
+	_list[| Tiles.ground] = render_buffer(_grid, _origin, Tiles.ground);
+	_list[| Tiles.snow] = render_buffer(_grid, _origin, Tiles.snow);
+	_list[| Tiles.water] = render_buffer(_grid, _origin, Tiles.water);
 	
 	return _list;
+}
+
+function render_full_grid(_grid) { // #IN PROGRESS
+	var _map = ds_grid_create(ds_grid_width(_grid) / global.chunk_size, ds_grid_height(_grid) / global.chunk_size);
+	
+	for(var xx = 0; xx < ds_grid_width(_map); xx++) {
+		for(var yy = 0; yy < ds_grid_height(_map); yy++) {
+			_map[# xx, yy] = render_chunk(_grid, xx, yy);
+		}
+	}
+	
+	return _map;
 }
 
 function edit_tile_height(_grid, _x, _y, _inc_buffers) { // #INCOMPLETE
@@ -111,11 +109,5 @@ function edit_tile_height(_grid, _x, _y, _inc_buffers) { // #INCOMPLETE
 }
 
 function edit_tile_index(_grid, _x, _y, _old_buffers, _new_buffers) { // #INCOMPLETE
-	
-}
-
-function render_full_grid(_grid) { // #INCOMPLETE
-	var _map = ds_grid_create(ds_grid_width(_grid) / global.chunk_size, ds_grid_height(_grid) / global.chunk_size);
-	
 	
 }
