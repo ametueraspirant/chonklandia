@@ -19,7 +19,9 @@ global.ygrid = get_integer("What do you want grid height to be? Increments by 16
 
 #region // set up vertex format and 3d settings
 gpu_set_ztestenable(true);
+gpu_set_zwriteenable(true);
 gpu_set_alphatestenable(true);
+gpu_set_alphatestref(1);
 gpu_set_texrepeat(true);
 
 vertex_format_begin();
