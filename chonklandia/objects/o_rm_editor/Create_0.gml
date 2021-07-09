@@ -28,6 +28,6 @@ grid.spr[Tiles.ground] = sprite_get_texture(s_ground_side_test, 0);
 grid.spr[Tiles.snow] = sprite_get_texture(s_snow_top_test, 0);
 grid.spr[Tiles.water] = sprite_get_texture(s_water_test, 0);
 
-grid.data = init_new_map_grid(grid.w, grid.h, function() constructor {buff = Tiles.grass; tile_h = 0;}); //# TEST
+grid.data = init_new_map_grid(grid.w, grid.h, function() constructor {top_i = Tiles.grass; side_i = Tiles.ground; tile_h = 0;}); //# TEST
 
-//new_map = render_full_grid(grid.data);
+grid.map = render_full_grid(grid.data);
