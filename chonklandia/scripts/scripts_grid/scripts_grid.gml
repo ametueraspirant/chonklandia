@@ -5,7 +5,7 @@ function init_new_map_grid(_w, _h, _data) { // #COMPLETE
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
 			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TEST
-			randomize();
+			randomize(); // #TEST
 		}
 	}
 	
