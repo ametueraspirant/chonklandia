@@ -2,4 +2,4 @@ clean up the editor, make it more "gui"
 add brushes, brush sizes, and stuff like a disruptor or smoother that either randomize nearby heights, or smooth them out.
 add buildings, including a way to smooth out the terrain they're on top of and disallow building on terrain that's too steep.
 add chonks and their pathfinding.
-
+fix render errors around chunk borders
