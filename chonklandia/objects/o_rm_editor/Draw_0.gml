@@ -8,17 +8,17 @@
 //var cam_y = (global.cam._y - global.cam._x) / (grid.spr.h/2);
 /*
 // draw map
-for(var _xx = 0; _xx < grid.cells.w; _xx++) {
-	for(var _yy = 0; _yy < grid.cells.h; _yy++) {
+for(var _xx = 0; _xx < grid.w; _xx++) {
+	for(var _yy = 0; _yy < grid.h; _yy++) {
 		// set up current grid data and index
 		var _data = grid.data[# _xx, _yy];
 		var _flo_i = _data.flo_i;
 		
 		// set up height variables
 		var _height = _data.tile_h;
-		if(_yy + 1 < grid.cells.h)var dl_height = grid.data[# _xx, _yy + 1].tile_h;
+		if(_yy + 1 < grid.h)var dl_height = grid.data[# _xx, _yy + 1].tile_h;
 		else var dl_height = 0;
-		if(_xx + 1 < grid.cells.w)var dr_height = grid.data[# _xx + 1, _yy].tile_h;
+		if(_xx + 1 < grid.w)var dr_height = grid.data[# _xx + 1, _yy].tile_h;
 		else var dr_height = 0;
 		
 		// combine those into current drawn coordinates for the tile

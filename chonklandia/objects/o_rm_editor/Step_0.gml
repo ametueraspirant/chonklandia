@@ -6,8 +6,8 @@ var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
 var _my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
 
 // clamp and write to memory
-grid.mx = clamp(_mx, 0, grid.cells.w - 1);
-grid.my = clamp(_my, 0, grid.cells.h - 1);
+grid.mx = clamp(_mx, 0, grid.w - 1);
+grid.my = clamp(_my, 0, grid.h - 1);
 
 // #TEST
 if(input_check_pressed(Verb.rclick)) {
