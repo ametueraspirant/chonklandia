@@ -4,7 +4,7 @@ function init_new_map_grid(_w, _h, _data) {
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
 		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
 			_grid[# xx, yy] = new _data();
-			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TEST #TODO make 5 the default step height
+			_grid[# xx, yy].tile_h = irandom_range(5, 20) * 5; // #TEST
 		}
 	}
 	
@@ -37,76 +37,30 @@ function render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, _is_fron
 		new Vector3(_origin.x + (_tex_size * xx),				_origin.y + (_tex_size * yy) + (_is_front * _tex_size),		_origin.z							 ),
 		-1, 1, _tex_size, _tex_size);
 }
-
-function render_grid_to_buffer(_grid, _x, _y, _inc_buffers) {
-	static _grid_size = 16;
-	static _tex_size = 32; // #TEST
-	static _tile_types = 4; // #TEST
-	var _origin = new Vector3(_x * _grid_size * _tex_size, _y * _grid_size * _tex_size, 0);
 	
-	if(_inc_buffers = "init") {
-		var _buffers = array_create(_tile_types, 1);
-	} else {
-		var _buffers = array_create(_tile_types, 0);
-		for(var int = 0; int < _tile_types; int++) {
-			_buffers[_inc_buffers[int]] = 1;
+function render_top_buffer(_grid, _buffer, _origin, _tex_size) {
+	var _top_buffer = vertex_create_buffer();
+	vertex_begin(_top_buffer, global.v_format);
+	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
+		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
+			render_top_face(_top_buffer, _grid, xx, yy, _origin, _tex_size);
 		}
-	}	
-	
-	switch(_buffers) {
-		case _buffers[Tiles.grass]:
-		
-		break;
-		
-		case _buffers[Tiles.ground]:
-		
-		break;
-		
-		case _buffers[Tiles.snow]:
-		
-		break;
-		
-		case _buffers[Tiles.water]:
-		
-		break;
 	}
-	
-	/*
-	
-	
-	static _origin = new Vector3(0, 0, 0); // #TEST
-	
-	if(ds_grid_width(_in_grid) <= _grid_size && ds_grid_height(_in_grid) <= _grid_size) {
-		var _new_grid = ds_grid_create(1, 1);
-		var _top_buffer = vertex_create_buffer();
-		vertex_begin(_top_buffer, global.v_format);
-		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
-			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
-				render_top_face(_top_buffer, _in_grid, xx, yy, _origin, _tex_size);
-			}
-		}
-		vertex_end(_top_buffer);
-		
-		var _sides_buffer = vertex_create_buffer();
-		vertex_begin(_sides_buffer, global.v_format);
-		for(var xx = 0; xx < ds_grid_width(_in_grid); xx++) {
-			for(var yy = 0; yy < ds_grid_height(_in_grid); yy++) {
-				render_lr_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
-				render_lr_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
-				render_fb_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, false);
-				render_fb_faces(_sides_buffer, _in_grid, xx, yy, _origin, _tex_size, true);
-			}
-		}
-		vertex_end(_sides_buffer);
-		
-		_new_grid[# 0, 0] = [_top_buffer, _sides_buffer];
-		return _new_grid;
-	} else {
-		
-	}*/
+	_buffer = vertex_end(_top_buffer);
 }
 
-// all of these functions are fucking awful
+function render_ground_buffer(_buffer, _origin) {
+	
+}
+
+function render_snow_buffer(_buffer, _origin) {
+	
+}
+
+function render_water_buffer(_buffer, _origin) {
+	
+}
+
 function edit_tile_height(_grid, _x, _y, _inc_buffers) {
 	render_grid_to_buffer(_grid, _x, _y, _inc_buffers);
 }
