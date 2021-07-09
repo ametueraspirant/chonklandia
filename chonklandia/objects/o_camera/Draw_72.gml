@@ -9,7 +9,7 @@ var view_mat = matrix_build_lookat(cam_x + global.cam.tilt,
 								   cam_y, 0, 0, 0, 1);
 var proj_mat = matrix_build_projection_ortho(-global.cam.w * global.cam.zoom.cur, 
 											 -global.cam.h * global.cam.zoom.cur, 
-											 -500, 30000);
+											 -700, 30000);
 
 camera_set_view_mat(_main_camera, view_mat);
 camera_set_proj_mat(_main_camera, proj_mat);
