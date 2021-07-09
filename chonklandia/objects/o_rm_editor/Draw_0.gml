@@ -10,3 +10,12 @@ for(var xx = 0; xx < ds_grid_width(grid.map); xx++) {
 		}
 	}
 }
+
+/*for(var xx = ds_grid_width(grid.map) -1; xx >= 0; xx--) {
+	for(var yy = ds_grid_width(grid.map) -1; yy >= 0; yy--) {
+		var _list = grid.map[# xx, yy];
+		for(var zz = 0; zz < ds_list_size(_list); zz++) {
+			vertex_submit(_list[| zz], pr_trianglelist, grid.spr[zz]);
+		}
+	}
+}*/
