@@ -6,6 +6,8 @@ grid = { // #TEST
 	},
 	spr: {
 		grass: sprite_get_texture(s_grass_top_test, 0),
+		snow: sprite_get_texture(s_snow_top_test, 0),
+		water: sprite_get_texture(s_water_test, 0),
 		ground: sprite_get_texture(s_ground_side_test, 0)
 	},
 	mx: 0,
@@ -20,6 +22,13 @@ editor = {
 	}
 }
 
-grid.data = init_new_map_grid(grid.cells.w, grid.cells.h, function() constructor {flo_i = 1; dec_i = 0; tile_h = 0;}); //# TEST
+enum Tiles {
+	grass,
+	ground,
+	snow,
+	water
+}
 
-new_map = render_grid_to_buffer(grid.data, false);
+grid.data = init_new_map_grid(grid.cells.w, grid.cells.h, function() constructor {buff = Tiles.grass; tile_h = 0;}); //# TEST
+
+new_map = render_full_grid(grid.data);

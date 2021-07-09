@@ -38,9 +38,42 @@ function render_fb_faces(_buffer, _in_grid, xx, yy, _origin, _tex_size, _is_fron
 		-1, 1, _tex_size, _tex_size);
 }
 
-function render_grid_to_buffer(_in_grid, _is_for_editing) {
+function render_grid_to_buffer(_grid, _x, _y, _inc_buffers) {
 	static _grid_size = 16;
 	static _tex_size = 32; // #TEST
+	static _tile_types = 4; // #TEST
+	var _origin = new Vector3(_x * _grid_size * _tex_size, _y * _grid_size * _tex_size, 0);
+	
+	if(_inc_buffers = "init") {
+		var _buffers = array_create(_tile_types, 1);
+	} else {
+		var _buffers = array_create(_tile_types, 0);
+		for(var int = 0; int < _tile_types; int++) {
+			_buffers[_inc_buffers[int]] = 1;
+		}
+	}	
+	
+	switch(_buffers) {
+		case _buffers[Tiles.grass]:
+		
+		break;
+		
+		case _buffers[Tiles.ground]:
+		
+		break;
+		
+		case _buffers[Tiles.snow]:
+		
+		break;
+		
+		case _buffers[Tiles.water]:
+		
+		break;
+	}
+	
+	/*
+	
+	
 	static _origin = new Vector3(0, 0, 0); // #TEST
 	
 	if(ds_grid_width(_in_grid) <= _grid_size && ds_grid_height(_in_grid) <= _grid_size) {
@@ -53,7 +86,6 @@ function render_grid_to_buffer(_in_grid, _is_for_editing) {
 			}
 		}
 		vertex_end(_top_buffer);
-		if(!_is_for_editing)vertex_freeze(_top_buffer);
 		
 		var _sides_buffer = vertex_create_buffer();
 		vertex_begin(_sides_buffer, global.v_format);
@@ -66,11 +98,29 @@ function render_grid_to_buffer(_in_grid, _is_for_editing) {
 			}
 		}
 		vertex_end(_sides_buffer);
-		if(!_is_for_editing)vertex_freeze(_sides_buffer);
 		
 		_new_grid[# 0, 0] = [_top_buffer, _sides_buffer];
 		return _new_grid;
 	} else {
 		
+	}*/
+}
+
+// all of these functions are fucking awful
+function edit_tile_height(_grid, _x, _y, _inc_buffers) {
+	render_grid_to_buffer(_grid, _x, _y, _inc_buffers);
+}
+
+function edit_tile_index(_grid, _x, _y, _old_buffers, _new_buffers) {
+	var _buffers = _old_buffers + _new_buffers;
+	render_grid_to_buffer(_grid, _x, _y, _buffers);
+	return _new_buffers;
+}
+
+function render_full_grid(_grid) {
+	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
+		for(var yy = 0; yy < ds_grid_height(_grid); yy++) {
+			render_grid_to_buffer(_grid, xx, yy, "init");
+		}
 	}
 }
