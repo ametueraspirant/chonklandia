@@ -5,12 +5,43 @@ buffer_delete(buffer);
 testgrid = json_parse(json);
 show_debug_message(testgrid.layers[0]);
 
-// check if the sprite is in the camera
-if(x_sq > global.cam._x - grid.spr.w
-&& x_sq < global.cam._x + global.cam.w + grid.spr.w
-&& y_sq > global.cam._y - grid.spr.h
-&& y_sq < global.cam._y + global.cam.h + grid.spr.h) {
-
-
-_new_grid[# 0, 0] = [_top_buffer, _sides_buffer];
-return _new_grid;
+///mouse_3d(xfrom, yfrom, zfrom, xto, yto, zto, xup, yup, zup, angle, aspect)
+var mm, mX, mY, mZ, width, height, tFOV;
+dX = argument3-argument0;
+dY = argument4-argument1;
+dZ = argument5-argument2;
+mm = sqrt(dXdX+dYdY+dZdZ);
+dX /= mm;
+dY /= mm;
+dZ /= mm;
+uX = argument6;
+uY = argument7;
+uZ = argument8;
+mm = uXdX+uYdY+uZdZ;
+uX -= mmdX;
+uY -= mmdY;
+uZ -= mmdZ
+mm = sqrt(uXuX+uYuY+uZuZ);
+uX /= mm;
+uY /= mm;
+uZ /= mm;
+// v = u x d
+vX = uYdZ-dYuZ;
+vY = uZdX-dZuX;
+vZ = uXdY-dXuY;
+tFOV = tan(argument9*pi/360);
+uX *= tFOV;
+uY *= tFOV;
+uZ *= tFOV;
+vX = tFOVargument10;
+vY = tFOVargument10;
+vZ = tFOVargument10;
+width = window_get_width();
+height = window_get_height();
+mX = dX+uX(1-2mouse_y/height)+vX(2mouse_x/width-1);
+mY = dY+uY(1-2mouse_y/height)+vY(2mouse_x/width-1);
+mZ = dZ+uZ(1-2mouse_y/height)+vZ(2mouse_x/width-1);
+mm = sqrt(mXmX+mYmY+mZ*mZ);
+mouse_3dx = mX/mm;
+mouse_3dy = mY/mm;
+mouse_3dz = mZ/mm;
