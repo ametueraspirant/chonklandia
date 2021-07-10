@@ -43,7 +43,7 @@ function render_fb_faces(_buffer, _grid, xx, yy, _lowest, _is_front) { // #COMPL
 		-1, 1, global.tex_size, global.tex_size);
 }
 	
-function render_buffer(_grid, _x, _y, _index) { // #IN PROGRESS
+function render_buffer(_grid, _x, _y, _index) { // #COMPLETE
 	var _buffer = vertex_create_buffer();
 	vertex_begin(_buffer, global.v_format);
 	for(var xx = _x * global.chunk_size; xx < _x * global.chunk_size + global.chunk_size; xx++) {
@@ -81,7 +81,7 @@ function render_buffer(_grid, _x, _y, _index) { // #IN PROGRESS
 	return _buffer;
 }
 	
-function render_chunk(_grid, _x, _y) { // #IN PROGRESS
+function render_chunk(_grid, _x, _y) { // #COMPLETE
 	var _list = ds_list_create();
 	
 	_list[| Tiles.grass] = render_buffer(_grid, _x, _y, Tiles.grass);
@@ -92,7 +92,7 @@ function render_chunk(_grid, _x, _y) { // #IN PROGRESS
 	return _list;
 }
 
-function render_full_grid(_grid) { // #IN PROGRESS
+function render_full_grid(_grid) { // #COMPLETE
 	var _map = ds_grid_create(ds_grid_width(_grid) / global.chunk_size, ds_grid_height(_grid) / global.chunk_size);
 	
 	for(var xx = 0; xx < ds_grid_width(_map); xx++) {
