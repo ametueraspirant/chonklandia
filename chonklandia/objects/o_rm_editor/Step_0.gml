@@ -1,5 +1,5 @@
 /// @description handle menu inputs
-//show_debug_message(string(mouse_x) + " " + string(mouse_y)); // #TEST
+show_debug_message(string(mouse_x) / global.chunk_size + " " + string(mouse_y) / global.chunk_size); // #TEST
 /*
 // set up temp mx my
 var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
