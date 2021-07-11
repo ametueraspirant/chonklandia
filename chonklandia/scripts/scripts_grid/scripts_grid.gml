@@ -11,7 +11,7 @@ function init_new_map_grid(_w, _h, _data) {
 	
 	return _grid;
 }
-	
+
 function update_map_grid() {
 	
 }
