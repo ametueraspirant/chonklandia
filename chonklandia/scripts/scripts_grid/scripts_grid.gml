@@ -1,4 +1,4 @@
-function init_new_map_grid(_w, _h, _data) { // #COMPLETE
+function init_new_map_grid(_w, _h, _data) {
 	var _grid = ds_grid_create(_w, _h);
 	
 	for(var xx = 0; xx < ds_grid_width(_grid); xx++) {
@@ -12,11 +12,11 @@ function init_new_map_grid(_w, _h, _data) { // #COMPLETE
 	return _grid;
 }
 	
-function update_map_grid() { // #INCOMPLETE
+function update_map_grid() {
 	
 }
 
-function render_top_face(_buffer, _grid, xx, yy) { // #COMPLETE
+function render_top_face(_buffer, _grid, xx, yy) {
 	vertex_create_face(_buffer,
 		new Vector3((global.tex_size * xx),						(global.tex_size * yy),						_grid[# xx, yy].tile_h),
 		new Vector3((global.tex_size * xx) + global.tex_size,	(global.tex_size * yy),						_grid[# xx, yy].tile_h),
@@ -25,7 +25,7 @@ function render_top_face(_buffer, _grid, xx, yy) { // #COMPLETE
 		-1, 1, global.tex_size, global.tex_size);
 }
 
-function render_lr_faces(_buffer, _grid, xx, yy, _lowest, _is_right) { // #COMPLETE
+function render_lr_faces(_buffer, _grid, xx, yy, _lowest, _is_right) {
 	vertex_create_face(_buffer,
 		new Vector3((global.tex_size * xx) + (_is_right * global.tex_size),		(global.tex_size * yy),						_grid[# xx, yy].tile_h),
 		new Vector3((global.tex_size * xx) + (_is_right * global.tex_size),		(global.tex_size * yy) + global.tex_size,	_grid[# xx, yy].tile_h),
@@ -34,7 +34,7 @@ function render_lr_faces(_buffer, _grid, xx, yy, _lowest, _is_right) { // #COMPL
 		-1, 1, global.tex_size, global.tex_size);
 }
 
-function render_fb_faces(_buffer, _grid, xx, yy, _lowest, _is_front) { // #COMPLETE
+function render_fb_faces(_buffer, _grid, xx, yy, _lowest, _is_front) {
 	vertex_create_face(_buffer,
 		new Vector3((global.tex_size * xx),						(global.tex_size * yy) + (_is_front * global.tex_size),		_grid[# xx, yy].tile_h),
 		new Vector3((global.tex_size * xx) + global.tex_size,	(global.tex_size * yy) + (_is_front * global.tex_size),		_grid[# xx, yy].tile_h),
@@ -43,7 +43,7 @@ function render_fb_faces(_buffer, _grid, xx, yy, _lowest, _is_front) { // #COMPL
 		-1, 1, global.tex_size, global.tex_size);
 }
 	
-function render_buffer(_grid, _x, _y, _index) { // #COMPLETE
+function render_buffer(_grid, _x, _y, _index) {
 	var _buffer = vertex_create_buffer();
 	vertex_begin(_buffer, global.v_format);
 	for(var xx = _x * global.chunk_size; xx < _x * global.chunk_size + global.chunk_size; xx++) {
@@ -81,7 +81,7 @@ function render_buffer(_grid, _x, _y, _index) { // #COMPLETE
 	return _buffer;
 }
 	
-function render_chunk(_grid, _x, _y) { // #COMPLETE
+function render_chunk(_grid, _x, _y) {
 	var _list = ds_list_create();
 	
 	_list[| Tiles.grass] = render_buffer(_grid, _x, _y, Tiles.grass);
@@ -92,7 +92,7 @@ function render_chunk(_grid, _x, _y) { // #COMPLETE
 	return _list;
 }
 
-function render_full_grid(_grid) { // #COMPLETE
+function render_full_grid(_grid) {
 	var _map = ds_grid_create(ds_grid_width(_grid) / global.chunk_size, ds_grid_height(_grid) / global.chunk_size);
 	
 	for(var xx = 0; xx < ds_grid_width(_map); xx++) {
@@ -104,10 +104,10 @@ function render_full_grid(_grid) { // #COMPLETE
 	return _map;
 }
 
-function edit_tile_height(_grid, _x, _y, _inc_buffers) { // #INCOMPLETE
+function edit_tile_height(_grid, _x, _y, _inc_buffers) {
 	
 }
 
-function edit_tile_index(_grid, _x, _y, _old_buffers, _new_buffers) { // #INCOMPLETE
+function edit_tile_index(_grid, _x, _y, _old_buffers, _new_buffers) {
 	
 }
