@@ -2,3 +2,11 @@ clean up the editor, make it more "gui"
 add brushes, brush sizes, and stuff like a disruptor or smoother that either randomize nearby heights, or smooth them out.
 add buildings, including a way to smooth out the terrain they're on top of and disallow building on terrain that's too steep.
 add chonks and their pathfinding.
+
+
+#TODO
+make a texture group for all sprites in vbuff
+texture_get_texel_width, texel_get_texture height, and sprite_get_uvs to map UV coords
+or make single texture page and self texture atlas
+math sick nasty easy
+texel width = 1/texture width, texel height = 1/texture height
