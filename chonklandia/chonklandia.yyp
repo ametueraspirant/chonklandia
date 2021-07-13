@@ -62,6 +62,7 @@
     {"id":{"name":"input_y","path":"scripts/input_y/input_y.yy",},"order":4,},
     {"id":{"name":"__input_class_player","path":"scripts/__input_class_player/__input_class_player.yy",},"order":6,},
     {"id":{"name":"__input_gamepad_find_in_sdl2_database","path":"scripts/__input_gamepad_find_in_sdl2_database/__input_gamepad_find_in_sdl2_database.yy",},"order":11,},
+    {"id":{"name":"scripts_snidr","path":"scripts/scripts_snidr/scripts_snidr.yy",},"order":4,},
     {"id":{"name":"input_gamepad_is_connected","path":"scripts/input_gamepad_is_connected/input_gamepad_is_connected.yy",},"order":6,},
     {"id":{"name":"input_bindings_reset","path":"scripts/input_bindings_reset/input_bindings_reset.yy",},"order":2,},
     {"id":{"name":"input_axis_threshold_set","path":"scripts/input_axis_threshold_set/input_axis_threshold_set.yy",},"order":1,},
