@@ -1,5 +1,5 @@
 /// @description handle menu inputs
-show_debug_message(string(floor(mouse_x / global.tex_size)) + " " + string(floor(mouse_y / global.tex_size))); // #TEST
+
 /*
 // set up temp mx my
 var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
