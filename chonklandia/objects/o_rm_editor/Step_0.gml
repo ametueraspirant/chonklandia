@@ -1,9 +1,10 @@
 /// @description handle menu inputs
 
+
+
+
+
 /*
-// set up temp mx my
-var _mx = floor((mouse_x / grid.spr.w) + (mouse_y / grid.spr.h));
-var _my = floor((mouse_y / grid.spr.h) - (mouse_x / grid.spr.w));
 
 // clamp and write to memory
 grid.mx = clamp(_mx, 0, grid.w - 1);

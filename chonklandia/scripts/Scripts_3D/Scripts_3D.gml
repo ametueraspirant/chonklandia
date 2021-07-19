@@ -28,5 +28,9 @@ function vertex_create_face(_v_buf, _p1, _p2, _p3, _p4, _colour, _alpha, _width,
 }
 
 function mouse_pos_3d() {
+	var _V6 = convert_2d_to_3d(_main_camera, window_mouse_get_x(), window_mouse_get_y());
+	var ray_dir = new Vector3(_V6[0], _V6[1], _V6[2]);
+	var ray_orig = new Vector3(_V6[3], _V6[4], _V6[5]);
+	
 	
 }
