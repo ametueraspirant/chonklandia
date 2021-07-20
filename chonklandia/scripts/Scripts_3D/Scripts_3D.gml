@@ -33,4 +33,5 @@ function mouse_pos_3d() {
 	var ray_orig = new Vector3(ray[3], ray[4], ray[5]);
 	
 	
+	//return new Vector3();
 }
